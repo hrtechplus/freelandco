@@ -11,6 +11,24 @@
     <!-- 
     - favicon
   -->
+  <!-- Always get the latest version -->
+   <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+<!-- Not recommended for production sites! -->
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+<!-- Get minor updates and patch fixes within a major version -->
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
+
+<!-- Get patch fixes within a minor version -->
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0/dist/smooth-scroll.polyfills.min.js"></script>
+
+<!-- Get a specific version -->
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+    <!-- scroll on reaveal package link  -->
+    <script src="https://unpkg.com/scrollreveal"></script>
     <!-- It is better to have svg images  -->
     <link
       rel="shortcut icon"
@@ -55,24 +73,24 @@
         <nav class="navbar container" data-navbar>
           <ul class="navbar-list">
             <li>
-              <a href="#" class="navbar-link" data-nav-link>Home</a>
+              <a data-scroll href="#" class="navbar-link" data-nav-link>Home</a>
             </li>
 
             <li>
-              <a href="#sales" class="navbar-link" data-nav-link>Sales</a>
+              <a data-scroll href="#sales" class="navbar-link" data-nav-link>Sales</a>
             </li>
 
             <li>
-              <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
+              <a data-scroll href="#contact" class="navbar-link" data-nav-link>Contact</a>
             </li>
 
             <li>
-              <a href="#about" class="navbar-link" data-nav-link>About Us</a>
+              <a data-scroll href="#about" class="navbar-link" data-nav-link>About Us</a>
             </li>
           </ul>
         </nav>
 
-        <a href="#" class="btn btn-secondary">Signup</a>
+        <a href="#" class="btn btn-secondary lolbtn ">Signup</a>
 
         <button
           class="nav-toggle-btn"
@@ -117,25 +135,31 @@
 
             <div class="hero-form-wrapper">
               <div class="form-tab">
-                <button class="tab-btn active" data-tab-btn>Buy</button>
-                <button class="tab-btn" data-tab-btn>Sell</button>
-                <button class="tab-btn" data-tab-btn>Rent</button>
+                <button
+                  class="tab-btn disabled"
+                  data-tab-btn
+                  style="color: #fff; background-color: #0f4c75"
+                >
+                  Receive an immediate cash offer for your house.
+                </button>
+                <!-- <button class="tab-btn" data-tab-btn>Sell</button> -->
+                <!-- <button class="tab-btn" data-tab-btn>Rent</button> -->
               </div>
 
               <form action="" class="hero-form">
                 <div class="input-wrapper">
-                  <label for="search" class="input-label">Search : *</label>
+                  <label for="search" class="input-label">Email:</label>
 
                   <input
-                    type="search"
+                    type="email"
                     name="search"
                     id="search"
-                    placeholder="Search your home"
+                    placeholder="Your email address"
                     required
                     class="input-field"
                   />
 
-                  <ion-icon name="search-outline"></ion-icon>
+                  <ion-icon name="mail-outline"></ion-icon>
                 </div>
 
                 <div class="input-wrapper">
@@ -145,29 +169,27 @@
 
                   <select name="category" id="category" class="dropdown-list">
                     <option value="house">House</option>
-                    <option value="apartment">Apartment</option>
-                    <option value="offices">Offices</option>
-                    <option value="townhome">Townhome</option>
+                    <option value="apartment" disabled>Apartment</option>
+                    <option value="offices" disabled>Offices</option>
+                    <option value="townhome" disabled>Townhome</option>
                   </select>
                 </div>
 
                 <div class="input-wrapper">
-                  <label for="min-price" class="input-label">Min Price :</label>
-
-                  <select name="min-price" id="min-price" class="dropdown-list">
-                    <option value="min price">Min Price</option>
-                    <option value="500">500</option>
-                    <option value="1000">1000</option>
-                    <option value="2000">2000</option>
-                    <option value="3000">3000</option>
-                    <option value="4000">4000</option>
-                    <option value="5000">5000</option>
-                    <option value="6000">6000</option>
-                  </select>
+                  <label for="Address" class="input-label">Address :</label>
+                  <input
+                    type="text"
+                    name="Address"
+                    id="Address"
+                    placeholder="Adress"
+                    required
+                    class="input-field"
+                  />
+                  <ion-icon name="home-outline"></ion-icon>
                 </div>
 
                 <div class="input-wrapper">
-                  <label for="max-price" class="input-label">Max Price :</label>
+                  <label for="max-price" class="input-label">Price</label>
 
                   <select name="max-price" id="max-price" class="dropdown-list">
                     <option value="max price">Max Price</option>
@@ -182,7 +204,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary">
-                  Search now
+                  Start here
                 </button>
               </form>
             </div>
@@ -200,7 +222,7 @@
               style="--width: 600; --height: 700"
             >
               <img
-                src="./assets/images/about-banner.jpg"
+                src="./assets/images/about banner.webp"
                 width="600"
                 height="700"
                 loading="lazy"
@@ -208,7 +230,7 @@
                 class="img-cover"
               />
 
-              <button class="play-btn" aria-label="play video">
+              <!-- <button class="play-btn" aria-label="play video"> -->
                 <ion-icon name="play" aria-hidden="true"></ion-icon>
               </button>
             </div>
@@ -219,11 +241,12 @@
               </h2>
 
               <p class="section-text">
-                Hously developed a platform for the Real Estate marketplace that
-                allows buyers and sellers to easily execute a transaction on
-                their own. The platform drives efficiency, cost transparency and
-                control into the hands of the consumers. Hously is Real Estate
-                Redefined.
+                Are you struggling to sell your property due to outstanding
+                debts or foreclosure? Look no further! We are a local company
+                that specializes in buying properties in any condition,
+                regardless of their current situation. Our goal is to simplify
+                the real estate process and offer a mutually beneficial
+                solution.
               </p>
 
               <a href="#" class="btn btn-primary">Learn More</a>
@@ -240,37 +263,35 @@
             <h2 class="h2 section-title">How It Works</h2>
 
             <p class="section-text">
-              A great plateform to buy, sell and rent your properties without
-              any agent or commisions.
+              Tell us about your home to instantly get your estimated value.
             </p>
 
             <ul class="service-list">
               <li>
-                <div class="service-card">
+                <div class="service-card  ">
                   <div class="card-icon">
                     <ion-icon name="home-outline"></ion-icon>
                   </div>
 
-                  <h3 class="h3 card-title">Evaluate Property</h3>
+                  <h3 class="h3 card-title">Share Your Home Details</h3>
 
                   <p class="card-text">
-                    If the distribution of letters and 'words' is random, the
-                    reader will not be distracted from making.
+                    Tell us about your home to instantly get your estimated
+                    value.
                   </p>
                 </div>
               </li>
 
               <li>
-                <div class="service-card">
+                <div class="service-card ">
                   <div class="card-icon">
                     <ion-icon name="briefcase-outline"></ion-icon>
                   </div>
 
-                  <h3 class="h3 card-title">Meeting with Agent</h3>
+                  <h3 class="h3 card-title">Schedule Video Walkthrough</h3>
 
                   <p class="card-text">
-                    If the distribution of letters and 'words' is random, the
-                    reader will not be distracted from making.
+                    Schedule a video walkthrough to finalize your offer.
                   </p>
                 </div>
               </li>
@@ -284,8 +305,7 @@
                   <h3 class="h3 card-title">Close the Deal</h3>
 
                   <p class="card-text">
-                    If the distribution of letters and 'words' is random, the
-                    reader will not be distracted from making.
+                    Choose the selling option that works best for you.
                   </p>
                 </div>
               </li>
@@ -851,7 +871,14 @@
         <div class="container">
           <div class="footer-brand">
             <a href="#" class="logo">
-              <ion-icon name="business-outline"></ion-icon> Realvine
+              <img
+                src="./assets/images/logos/freeLandCo__1_-removebg-preview (1).png"
+                alt="Freelandco logo"
+                style="vertical-align: middle"
+                width="24"
+                height="24"
+              />
+              Freelandco
             </a>
 
             <p class="footer-text">
@@ -953,9 +980,9 @@
               <ion-icon name="location-outline"></ion-icon>
 
               <address class="address">
-                C/54 Northwest Freeway,<br />
-                Suite 558,<br />
-                Houston, USA 485
+                11601 Wilshire Blvd,<br />
+                Suite 505 ,<br />
+                Los Angeles, Ca 90025
                 <a href="#" class="address-link">View on Google map</a>
               </address>
             </li>
@@ -982,9 +1009,9 @@
       <div class="footer-bottom">
         <div class="container">
           <p class="copyright">
-            &copy; 2023 Realvine. All Right Reserved by
-            <a href="https://github.com/dinesh0kumar" class="copyright-link"
-              >Dinesh0kumar</a
+            &copy; 2023 FreeLandCo . All Right Reserved by
+            <a href="https://www.freelandco.com/" class="copyright-link"
+              >freelandco</a
             >.
           </p>
 
@@ -1046,5 +1073,18 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+    <script>
+      ScrollReveal({ reset: true }).reveal(".about", { delay: 500 });
+      ScrollReveal({ reset: true }).reveal(".about-banner", { delay: 500 });
+      ScrollReveal({ reset: true }).reveal(".about-content", { delay: 600 });
+      ScrollReveal({ reset: true }).reveal(".section-title", { delay: 600 });
+      ScrollReveal({ reset: true }).reveal(".section-text", { duration: 2000 });
+      ScrollReveal({ reset: true }).reveal(".service-card", { interval: 500 });
+      ScrollReveal({ reset: true }).reveal(".property-card", { interval: 500 , duration:100 });
+      ScrollReveal({ reset: true }).reveal(".navbar-link", { interval: 500 });
+      var scroll = new SmoothScroll('a[href*="#"]',{
+        speed: 300
+      });
+    </script>
   </body>
 </html>
