@@ -25,17 +25,38 @@ if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
-} 
-phpinfo();
+}
+
 $conn->close();
 
 // Send email with user input
-$to = "rawart.media@gmail.com";
+$to = "your_email@gmail.com";
 $subject = "New Property Inquiry";
 $message = "Email: $email\nCategory: $category\nAddress: $address\nPrice: $price";
-$headers = "From: webmaster@example.com" . "\r\n" .
-           "Reply-To: webmaster@example.com" . "\r\n" .
+$headers = "From: your_email@gmail.com" . "\r\n" .
+           "Reply-To: your_email@gmail.com" . "\r\n" .
            "X-Mailer: PHP/" . phpversion();
 
-mail($to, $subject, $message, $headers);
+// Authenticate with Gmail SMTP server
+$username = "testupworkhr@gmail.com";
+$password = "^Bu7hSRkJsiD^wF9";
+$smtp = array(
+  'host' => 'smtp.gmail.com',
+  'port' => 587,
+  'auth' => true,
+  'username' => $username,
+  'password' => $password
+);
+
+// Send email using SMTP
+$transport = new \Swift_SmtpTransport($smtp['host'], $smtp['port']);
+$transport->setUsername($smtp['username']);
+$transport->setPassword($smtp['password']);
+$transport->setEncryption('tls');
+$mailer = new \Swift_Mailer($transport);
+$message = new \Swift_Message($subject);
+$message->setFrom(array('your_email@gmail.com' => 'Your Name'));
+$message->setTo(array($to));
+$message->setBody($message);
+$result = $mailer->send($message);
 ?>
