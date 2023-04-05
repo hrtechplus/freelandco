@@ -77,20 +77,20 @@
             </li>
 
             <li>
-              <a data-scroll href="#sales" class="navbar-link" data-nav-link>Sales</a>
+              <a data-scroll href="#about-us" class="navbar-link" data-nav-link>About</a>
             </li>
 
             <li>
-              <a data-scroll href="#contact" class="navbar-link" data-nav-link>Contact</a>
+              <a data-scroll href="#how-it-works" class="navbar-link" data-nav-link>How it works</a>
             </li>
 
             <li>
-              <a data-scroll href="#about" class="navbar-link" data-nav-link>About Us</a>
+              <a data-scroll href="#contact-us" class="navbar-link" data-nav-link>Contact</a>
             </li>
           </ul>
         </nav>
 
-        <a href="#" class="btn btn-secondary lolbtn ">Signup</a>
+        <a href="#form" class="btn btn-secondary lolbtn ">Request</a>
 
         <button
           class="nav-toggle-btn"
@@ -133,7 +133,7 @@
               </div>
             </div>
 
-            <div class="hero-form-wrapper">
+            <div class="hero-form-wrapper" id="form">
               <div class="form-tab">
                 <button
                   class="tab-btn disabled"
@@ -192,7 +192,7 @@
                   <label for="max-price" class="input-label">Price</label>
 
                   <select name="max-price" id="max-price" class="dropdown-list">
-                    <option value="max price">Max Price</option>
+                    <option value="max price">Value</option>
                     <option value="500">500</option>
                     <option value="1000">1000</option>
                     <option value="2000">2000</option>
@@ -204,7 +204,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary">
-                  Start here
+                  Request
                 </button>
               </form>
             </div>
@@ -235,9 +235,10 @@
               </button>
             </div>
 
-            <div class="about-content">
+            <div class="about-content" id="about-us">
               <h2 class="h2 section-title">
-                Efficiency. Transparency. Control.
+                <!-- Efficiency. Transparency. Control. -->
+                Who we are
               </h2>
 
               <p class="section-text">
@@ -253,7 +254,7 @@ FreelandCo is a company that specializes in helping homeowners facing foreclosur
         - #SERVICE
       -->
 
-        <section class="section service" aria-label="service">
+        <section class="section service" aria-label="service" id="how-it-works">
           <div class="container">
             <h2 class="h2 section-title">How It Works</h2>
 
@@ -316,7 +317,7 @@ FreelandCo is a company that specializes in helping homeowners facing foreclosur
         - #PROPERTY
       -->
 
-        <section class="section property" aria-label="property">
+        <!-- <section class="section property" aria-label="property">
           <div class="container">
             <h2 class="h2 section-title">Featured Properties</h2>
 
@@ -807,25 +808,29 @@ FreelandCo is a company that specializes in helping homeowners facing foreclosur
               </li>
             </ul>
           </div>
-        </section>
+        </section> -->
 
         <!-- 
         - #CONTACT
       -->
 
-        <section class="section contact" aria-label="contact">
+        <section class="section contact" aria-label="contact" id="contact-us">
           <div class="container">
             <h2 class="h2 section-title">Have Question ? Get in touch!</h2>
 
             <p class="section-text">
-              A great plateform to buy, sell and rent your properties without
+              A great plateform to buy, sell your properties without
               any agent or commisions.
             </p>
 
-            <button class="btn btn-primary">
-              <ion-icon name="call-outline"></ion-icon>
-
-              <span class="span">Contact us</span>
+            <button type="button" href="tel:+16509338729" class="btn btn-primary">
+                  <ion-icon name="call-outline"></ion-icon>
+              
+              
+              
+                <a href="tel:+16509338729" class="footer-link"
+                >Contact us</a>
+              <!-- <span class="span"></span> -->
             </button>
           </div>
         </section>
@@ -840,7 +845,7 @@ FreelandCo is a company that specializes in helping homeowners facing foreclosur
               <h2 class="h2 section-title">Subscribe to Newsletter!</h2>
 
               <p class="section-text">
-                Subscribe to get latest updates and information.
+                Subscribe to get latest offers and information.
               </p>
             </div>
 
@@ -894,7 +899,7 @@ Your one-stop solution for hassle-freeproperty sale
               <a href="#" class="footer-link">
                 <ion-icon name="chevron-forward"></ion-icon>
 
-                <span class="span">About us</span>
+                <span class="span">Home</span>
               </a>
             </li>
 
@@ -902,7 +907,7 @@ Your one-stop solution for hassle-freeproperty sale
               <a href="#" class="footer-link">
                 <ion-icon name="chevron-forward"></ion-icon>
 
-                <span class="span">Services</span>
+                <span class="span">Request Cash offer</span>
               </a>
             </li>
 
@@ -910,7 +915,7 @@ Your one-stop solution for hassle-freeproperty sale
               <a href="#" class="footer-link">
                 <ion-icon name="chevron-forward"></ion-icon>
 
-                <span class="span">Pricing</span>
+                <span class="span">How it works</span>
               </a>
             </li>
 
