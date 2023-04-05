@@ -1,62 +1,74 @@
 <?php
-// Get user input from the form
-$email = $_POST['search'];
-$category = $_POST['category'];
-$address = $_POST['Address'];
-$price = $_POST['max-price'];
+if(isset($_POST['search'])) {
 
-// Connect to the database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "learning";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+    $email_to = "rawart.media@gmail.com";
+    $email_subject = "New form submission";
+    
+    function died($error) {
+        echo "We are very sorry, but there were error(s) found with the form you submitted. ";
+        echo "These errors appear below.<br /><br />";
+        echo $error."<br /><br />";
+        echo "Please go back and fix these errors.<br /><br />";
+        die();
+    }
+    
+    // validation expected data exists
+    if(!isset($_POST['search']) ||
+        !isset($_POST['category']) ||
+        !isset($_POST['Address']) ||
+        !isset($_POST['max-price'])) {
+        died('We are sorry, but there appears to be a problem with the form you submitted.');       
+    }
+    
+    $email_from = $_POST['search']; // required
+    $category = $_POST['category']; // required
+    $Address = $_POST['Address']; // required
+    $max_price = $_POST['max-price']; // required
+    
+    $error_message = "";
+    $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
+    
+  if(!preg_match($email_exp,$email_from)) {
+    $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
+  }
+    
+    $string_exp = "/^[A-Za-z .'-]+$/";
+    
+  if(!preg_match($string_exp,$category)) {
+    $error_message .= 'The Category you entered does not appear to be valid.<br />';
+  }
+    
+  if(!preg_match($string_exp,$Address)) {
+    $error_message .= 'The Address you entered does not appear to be valid.<br />';
+  }
+    
+  if(strlen($error_message) > 0) {
+    died($error_message);
+  }
+    
+    $email_message = "Form details below.\n\n";
+    
+    function clean_string($string) {
+      $bad = array("content-type","bcc:","to:","cc:","href");
+      return str_replace($bad,"",$string);
+    }
+    
+    $email_message .= "Email: ".clean_string($email_from)."\n";
+    $email_message .= "Category: ".clean_string($category)."\n";
+    $email_message .= "Address: ".clean_string($Address)."\n";
+    $email_message .= "Max Price: ".clean_string($max_price)."\n";
+    
+// create email headers
+$headers = 'From: '.$email_from."\r\n".
+'Reply-To: '.$email_from."\r\n" .
+'X-Mailer: PHP/' . phpversion();
+@mail($email_to, $email_subject, $email_message, $headers);  
+?>
+ 
+<!-- include your own success html here -->
+ 
+Thank you for contacting us. We will be in touch with you very soon.
+ 
+<?php
 }
-
-// Insert user input into the database
-$sql = "INSERT INTO property (email, category, address, price) VALUES ('$email', '$category', '$address', '$price')";
-
-if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully";
-} else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-$conn->close();
-
-// Send email with user input
-$to = "your_email@gmail.com";
-$subject = "New Property Inquiry";
-$message = "Email: $email\nCategory: $category\nAddress: $address\nPrice: $price";
-$headers = "From: your_email@gmail.com" . "\r\n" .
-           "Reply-To: your_email@gmail.com" . "\r\n" .
-           "X-Mailer: PHP/" . phpversion();
-
-// Authenticate with Gmail SMTP server
-$username = "testupworkhr@gmail.com";
-$password = "^Bu7hSRkJsiD^wF9";
-$smtp = array(
-  'host' => 'smtp.gmail.com',
-  'port' => 587,
-  'auth' => true,
-  'username' => $username,
-  'password' => $password
-);
-
-// Send email using SMTP
-$transport = new \Swift_SmtpTransport($smtp['host'], $smtp['port']);
-$transport->setUsername($smtp['username']);
-$transport->setPassword($smtp['password']);
-$transport->setEncryption('tls');
-$mailer = new \Swift_Mailer($transport);
-$message = new \Swift_Message($subject);
-$message->setFrom(array('your_email@gmail.com' => 'Your Name'));
-$message->setTo(array($to));
-$message->setBody($message);
-$result = $mailer->send($message);
 ?>
