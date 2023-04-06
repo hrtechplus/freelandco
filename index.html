@@ -7,6 +7,10 @@
     <title>
       Sell Your House Fast: Get Cash Offer from FreelandCo|Los Angeles
     </title>
+    <!-- scroll on reveling michalsnik  -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- scroll on reveling michalsnik  -->
 
     <!-- parallex scrolling library  -->
     <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
@@ -121,7 +125,7 @@
         - #HERO
       -->
 
-        <section class="section hero" aria-label="hero">
+        <section data-aos="zoom-out" data-aos-duration="500" class="section hero" aria-label="hero">
           <div class="container">
             <div class="hero-bg">
               <div class="hero-content">
@@ -240,7 +244,7 @@
               </button>
             </div>
 
-            <div class="about-content" id="about-us">
+            <div data-aos="fade-left" class="about-content" id="about-us">
               <h2 class="h2 section-title">
                 <!-- Efficiency. Transparency. Control. -->
                 Who We are
@@ -259,7 +263,7 @@ FreelandCo is a company that specializes in helping homeowners facing foreclosur
         - #SERVICE
       -->
 
-        <section class="section service" aria-label="service" id="how-it-works">
+        <section data-aos="fade-up" class="section service" aria-label="service" id="how-it-works">
           <div class="container">
             <h2 class="h2 section-title">How It Works</h2>
 
@@ -314,7 +318,7 @@ FreelandCo is a company that specializes in helping homeowners facing foreclosur
             <div class=" container">
 
             </div>
-             <a href="./howitworks.html" class="btn btn-primary" style=" margin:  6rem auto;">Learn More</a>
+             <a  data-aos="fade-up" href="./howitworks.html" class="btn btn-primary howitwork" style=" margin:  6rem auto;">Learn More</a>
           </div>
         </section>
 
@@ -819,7 +823,7 @@ FreelandCo is a company that specializes in helping homeowners facing foreclosur
         - #CONTACT
       -->
 
-        <section class="section contact" aria-label="contact" id="contact-us">
+        <section data-aos="fade-up" class="section contact" aria-label="contact" id="contact-us">
           <div class="container">
             <h2 class="h2 section-title">Have Question ? Get in touch!</h2>
 
@@ -828,12 +832,12 @@ FreelandCo is a company that specializes in helping homeowners facing foreclosur
               any agent or commisions.
             </p>
 
-            <button type="button" href="tel:+16509338729" class="btn btn-primary">
+            <button data-aos="fade-up" type="button" href="tel:+16509338729" class="btn btn-primary">
                   <ion-icon name="call-outline"></ion-icon>
               
               
               
-                <a href="tel:+16509338729" class="footer-link"
+                <a  href="tel:+16509338729" class="footer-link"
                 >Contact us</a>
               <!-- <span class="span"></span> -->
             </button>
@@ -844,8 +848,8 @@ FreelandCo is a company that specializes in helping homeowners facing foreclosur
         - #NEWSLETTER
       -->
 
-        <section class="newsletter" aria-label="newsletter">
-          <div class="container">
+        <section  class="newsletter" aria-label="newsletter">
+          <div data-aos="zoom-in" data-aos-duration="1100" class="container">
             <div class="wrapper">
               <h2 class="h2 section-title">Subscribe to Newsletter!</h2>
 
@@ -1101,11 +1105,18 @@ new simpleParallax(image, {
 	orientation: 'right'
 });
 
+// button
+      var image = document.getElementsByClassName('howitworks');
+new simpleParallax(image, {
+	orientation: 'left',overflow: true
+});
+
 // second parralex for hero
 var image = document.getElementsByClassName(' form_parrel');
 new simpleParallax(image, {
 	scale: 1.1
 });
+ AOS.init();
     </script>
   </body>
 </html>
