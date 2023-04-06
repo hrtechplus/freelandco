@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <title>
       Sell Your House Fast: Get Cash Offer from FreelandCo|Los Angeles
     </title>
+    <!-- scroll on reveling michalsnik  -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- scroll on reveling michalsnik  -->
+
+    <!-- parallex scrolling library  -->
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+    <!-- parallex scrolling library  -->
 
     <!-- 
     - favicon
   -->
-    <!-- Always get the latest version -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <!-- Not recommended for production sites! -->
-    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <!-- Always get the latest version -->
+   <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+<!-- Not recommended for production sites! -->
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
 
-    <!-- Get minor updates and patch fixes within a major version -->
-    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
+<!-- Get minor updates and patch fixes within a major version -->
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
 
-    <!-- Get patch fixes within a minor version -->
-    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0/dist/smooth-scroll.polyfills.min.js"></script>
+<!-- Get patch fixes within a minor version -->
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0/dist/smooth-scroll.polyfills.min.js"></script>
 
-    <!-- Get a specific version -->
-    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+<!-- Get a specific version -->
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
     <!-- scroll on reaveal package link  -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <!-- It is better to have svg images  -->
@@ -53,10 +61,12 @@
     />
   </head>
   <body>
-    <header class="header" data-header >
+
+    <header data-aos="zoom-out" data-aos-duration="500" class="header" data-header>
       <div class="container">
-        <a href="./index.html" class="logo">
+        <a href="./index.html" class="logo" data-aos="fade-left">
           <img
+            data-aos="fade-right"
             src="./assets/images/logos/freeLandCo__1_-removebg-preview (1).png"
             alt="Freelandco logo"
             style="vertical-align: middle"
@@ -66,41 +76,27 @@
           Freelandco
         </a>
 
-        <nav class="navbar container" data-navbar>
+        <nav class="navbar container" data-navbar data-aos="zoom-in">
           <ul class="navbar-list">
             <li>
               <a data-scroll href="#" class="navbar-link" data-nav-link>Home</a>
             </li>
 
             <li>
-              <a data-scroll href="#about-us" class="navbar-link" data-nav-link
-                >About</a
-              >
+              <a data-scroll href="#about-us" class="navbar-link" data-nav-link>About</a>
             </li>
 
             <li>
-              <a
-                data-scroll
-                href="#how-it-works"
-                class="navbar-link"
-                data-nav-link
-                >How it works</a
-              >
+              <a data-scroll href="#how-it-works" class="navbar-link" data-nav-link>How it works</a>
             </li>
 
             <li>
-              <a
-                data-scroll
-                href="#contact-us"
-                class="navbar-link"
-                data-nav-link
-                >Contact</a
-              >
+              <a data-scroll href="#contact-us" class="navbar-link" data-nav-link>Contact</a>
             </li>
           </ul>
         </nav>
 
-        <a href="#form" class="btn btn-secondary lolbtn">Request</a>
+        <a href="#form" class="btn btn-secondary  fs-4 ">Request</a>
 
         <button
           class="nav-toggle-btn"
@@ -143,9 +139,9 @@
       </div>
     </section>
 
-    <section>
+    <section data-aos="zoom-out"> 
       <div class="container-sm mx-auto my-3 p-4">
-        <div class=" mb-3">
+        <div class=" mb-3" >
           <h2 class=" display-4  text-black lh-1" style="font-weight: 400; ">Information  we collect</h2>
           <p>
             <span class=" text-black-50 my-2">
@@ -244,7 +240,7 @@
             </a>
 
             <p class="footer-text">
-              Your one-stop solution for hassle-freeproperty sale
+Your one-stop solution for hassle-freeproperty sale
             </p>
           </div>
 
@@ -281,17 +277,11 @@
               <a href="#" class="footer-link">
                 <ion-icon name="chevron-forward"></ion-icon>
 
-                <span class="span">Blog</span>
+                <span class="span">Subscribe</span>
               </a>
             </li>
 
-            <li>
-              <a href="#" class="footer-link">
-                <ion-icon name="chevron-forward"></ion-icon>
 
-                <span class="span">Login</span>
-              </a>
-            </li>
           </ul>
 
           <ul class="footer-list">
@@ -308,20 +298,14 @@
             </li>
 
             <li>
-              <a href="#" class="footer-link">
+              <a href="./privacy-policy.html" class="footer-link">
                 <ion-icon name="chevron-forward"></ion-icon>
 
                 <span class="span">Privacy Policy</span>
               </a>
             </li>
 
-            <li>
-              <a href="#" class="footer-link">
-                <ion-icon name="chevron-forward"></ion-icon>
 
-                <span class="span">Listing</span>
-              </a>
-            </li>
 
             <li>
               <a href="#" class="footer-link">
@@ -359,7 +343,9 @@
             <li class="footer-item">
               <ion-icon name="call-outline"></ion-icon>
 
-              <a href="tel:+16509338729" class="footer-link">+1(650)933-8729</a>
+              <a href="tel:+16509338729" class="footer-link"
+                >+1(650)933-8729</a
+              >
             </li>
           </ul>
         </div>
@@ -376,30 +362,24 @@
 
           <ul class="social-list">
             <li>
-              <a
-                href="https://www.facebook.com/profile.php?id=100085939460808"
-                class="social-link"
-              >
+              <a href="https://www.facebook.com/profile.php?id=100085939460808" class="social-link">
                 <ion-icon name="logo-facebook"></ion-icon>
               </a>
             </li>
 
             <li>
-              <a
-                href="https://www.instagram.com/freelandco_realestate/"
-                class="social-link"
-              >
+              <a href="https://www.instagram.com/freelandco_realestate/" class="social-link">
                 <ion-icon name="logo-instagram"></ion-icon>
               </a>
             </li>
 
-            <!-- keep for twitter  -->
+                 <!-- keep for twitter  -->
             <!-- <li>
               <a href="#" class="social-link">
                 <ion-icon name="logo-twitter"></ion-icon>
               </a>
             </li> -->
-            <!-- keep for linked in future update  -->
+                   <!-- keep for linked in future update  -->
             <!-- <li>
               <a href="#" class="social-link">
                 <ion-icon name="logo-linkedin"></ion-icon>
