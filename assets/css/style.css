@@ -340,8 +340,25 @@ body {
   border-radius: var(--radius-16);
   overflow: hidden;
 }
+.privacy {
+  background-image: url("../images/property-6.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius-16);
+  overflow: hidden;
+}
 
 .hero-content {
+  background-color: var(--oxford-blue_60);
+  padding-block: 180px;
+  padding-inline: 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+  text-align: center;
+}
+.privacy-content {
   background-color: var(--oxford-blue_60);
   padding-block: 180px;
   padding-inline: 40px;
