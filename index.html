@@ -8,6 +8,10 @@
       Sell Your House Fast: Get Cash Offer from FreelandCo|Los Angeles
     </title>
 
+    <!-- parallex scrolling library  -->
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+    <!-- parallex scrolling library  -->
+
     <!-- 
     - favicon
   -->
@@ -219,15 +223,16 @@
           <div class="container">
             <div
               class="about-banner img-holder"
-              style="--width: 600; --height: 700"
+              style="--width: 600; --height: 400"
             >
               <img
                 src="./assets/images/aboutBanner.jpg"
+                style=" background-size: fill;"
                 width="600"
                 height="700"
                 loading="lazy"
                 alt="about banner"
-                class="img-cover"
+                class="img-cover thumbnail"
               />
 
               <!-- <button class="play-btn" aria-label="play video"> -->
@@ -1078,10 +1083,10 @@ Your one-stop solution for hassle-freeproperty sale
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
     <script>
-      ScrollReveal({ reset: true }).reveal(".about", { delay: 500 });
-      ScrollReveal({ reset: true }).reveal(".about-banner", { delay: 500 });
-      ScrollReveal({ reset: true }).reveal(".about-content", { delay: 600 });
-      ScrollReveal({ reset: true }).reveal(".section-title", { delay: 600 });
+      ScrollReveal({ reset: true }).reveal(".about", { delay: 100 });
+      ScrollReveal({ reset: true }).reveal(".about-banner", { delay: 100 });
+      ScrollReveal({ reset: true }).reveal(".about-content", { delay: 100 });
+      ScrollReveal({ reset: true }).reveal(".section-title", { delay: 100 });
       ScrollReveal({ reset: true }).reveal(".section-text", { duration: 2000 });
       ScrollReveal({ reset: true }).reveal(".service-card", { interval: 500 });
       ScrollReveal({ reset: true }).reveal(".property-card", { interval: 500 , duration:100 });
@@ -1089,6 +1094,18 @@ Your one-stop solution for hassle-freeproperty sale
       var scroll = new SmoothScroll('a[href*="#"]',{
         speed: 300
       });
+
+      // parallex effect
+      var image = document.getElementsByClassName('thumbnail');
+new simpleParallax(image, {
+	orientation: 'right'
+});
+
+// second parralex for hero
+var image = document.getElementsByClassName('hero-bg');
+new simpleParallax(image, {
+	scale: 1.5
+});
     </script>
   </body>
 </html>

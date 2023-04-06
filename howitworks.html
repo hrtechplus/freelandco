@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+        <!-- parallex scrolling library  -->
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+    <!-- parallex scrolling library  -->
     
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -92,7 +95,7 @@
           </ul>
         </nav>
 
-        <a href="#" class="btn btn-secondary lolbtn">SignUp</a>
+        <a href="#" class="btn btn-secondary lolbtn">Request</a>
 
         <button
           class="nav-toggle-btn"
@@ -118,7 +121,7 @@
           <div class="container">
             <div
               class="about-banner img-holder"
-              style="--width: 600; --height: 700"
+              style="--width: 600; --height: 400"
             >
               <img
                 src="./assets/images/property-4.jpg"
@@ -126,7 +129,7 @@
                 height="700"
                 loading="lazy"
                 alt="about banner"
-                class="img-cover"
+                class="img-cover parralex"
               />
 
               <!-- <button class="play-btn" aria-label="play video"> -->
@@ -597,5 +600,11 @@
         </div>
       </div>
     </footer>
+    <script>
+            var image = document.getElementsByClassName('parralex');
+new simpleParallax(image, {
+	orientation: 'down'
+});
+    </script>
   </body>
 </html>
