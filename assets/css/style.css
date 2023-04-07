@@ -4,7 +4,7 @@
    */
 
   --oxford-blue_60: hsla(224, 34%, 13%, 0.6);
-  --green-pigment: hsl(227, 80%, 28%);
+  --green-pigment: hsl(216, 80%, 28%);
   --oxford-blue: hsl(224, 34%, 13%);
   --maximum-red: hsl(0, 72%, 51%);
   --eerie-black: hsl(0, 0%, 9%);
@@ -14,7 +14,7 @@
   --carcoal_20: hsla(214, 19%, 29%, 0.2);
   --carcoal_15: hsla(214, 19%, 29%, 0.15);
   --carcoal_10: hsla(214, 19%, 29%, 0.1);
-  --sea-green: hsl(142, 72%, 29%);
+  --sea-green: hsl(236, 72%, 29%);
   --gainsboro: hsl(220, 13%, 91%);
   --white_70: hsla(0, 0%, 100%, 0.7);
   --gunmetal: hsl(215, 28%, 17%);
