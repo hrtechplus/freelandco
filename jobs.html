@@ -10,7 +10,7 @@
   visibility: hidden;
 }
 .custom-file-input::before {
-  content: 'Select some files';
+  content: 'Select your CV ';
   display: inline-block;
   background: linear-gradient(top, #f9f9f9, #e3e3e3);
   border: 1px solid #999;
@@ -21,7 +21,7 @@
   -webkit-user-select: none;
   cursor: pointer;
   text-shadow: 1px 1px #fff;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 10pt;
 }
 .custom-file-input:hover::before {
@@ -191,7 +191,8 @@
                   <label for="resume" style=" color: #0f072c;">Resume <b class=" text-danger">*</b>
                   </label>
                   
-                  <input type="file" name="resume" id="resume" class="custom-file-input">
+                  <input type="file" name="resume" id="resume" class="custom-file-input" accept=".pdf,.doc,.docx">
+                  <div id="emailHelp" class="form-text fst-italic fs-6">Only PDF,Doc,Docx are supported</div>
                 </div>
                 <button type="submit" class="btn btn-primary" style="font-size: 1rem;">Submit Application</button>
               </form>
