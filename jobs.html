@@ -164,22 +164,28 @@
             </div>
             <!-- form start  -->
             <div class=" container-sm mx-auto px-5">
-              <form>
+              <form action="" method="">
                 <div class="mb-5">
                   <label for="exampleInputName" class="form-label" style=" color: #0f072c;">Name <b class=" text-danger">*</b>
                   </label>
-                  <input type="email" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+                  <input type="email" class="form-control" id="exampleInputName" aria-describedby="nameHelp" required>
                 </div>
                 <div class="mb-5">
                   <label for="exampleInputEmail1" class="form-label" style=" color: #0f072c;">Email <b class=" text-danger">*</b>
                   </label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                   <div id="emailHelp" class="form-text fst-italic fs-6">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-5">
+                  <label for="exampleInputPhone" class="form-label" style=" color: #0f072c;">Phone number <b class=" text-danger"></b>
+                  </label>
+                  <input type="text" class="form-control" id="exampleInputPhone" aria-describedby="PhoneHelp">
+                  <div id="PhoneHelp" class="form-text fst-italic fs-6">We'll never share your Phone number with anyone else.</div>
                 </div>
                 <div class="mb-5">
                   <label for="hear-about-us" style=" color: #0f072c;">How did you hear about us? <b class=" text-danger">*</b>
                   </label>
-                  <select name="hear-about-us" id="hear-about-us" class="form-control">
+                  <select name="hear-about-us" id="hear-about-us" class="form-control" required>
                     <option value="">Please select</option>
                     <option value="friend">From a friend</option>
                     <option value="social-media">Social media</option>
