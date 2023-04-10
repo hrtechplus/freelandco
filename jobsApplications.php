@@ -1,6 +1,19 @@
 <?php
 // Check if the form has been submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+$recaptcha_secret = "6Ldm0nYlAAAAAD6E55-fVP353aGbj2rbZRplobdT";
+$recaptcha_response = $_POST['g-recaptcha-response'];
+$recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
+$recaptcha_data = array('secret' => $recaptcha_secret, 'response' => $recaptcha_response);
+$recaptcha_options = array('http' => array('method' => 'POST', 'content' => http_build_query($recaptcha_data)));
+$recaptcha_context = stream_context_create($recaptcha_options);
+$recaptcha_result = file_get_contents($recaptcha_url, false, $recaptcha_context);
+$recaptcha_response_data = json_decode($recaptcha_result);
+if (!$recaptcha_response_data->success) {
+    // reCAPTCHA verification failed
+    // handle the error here
+} else {
+    // reCAPTCHA verification succeeded
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Check if all required fields are completed
   if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['hear-about-us']) && !empty($_FILES['resume']['name'])) {
     // Connect to the database
@@ -37,4 +50,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "Please complete all required fields.";
   }
 }
+}
+
 ?>
