@@ -340,6 +340,14 @@ body {
   border-radius: var(--radius-16);
   overflow: hidden;
 }
+.carrerHero-bg {
+  background-image: url("../images/carrer.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius-16);
+  overflow: hidden;
+}
 .privacy {
   background-image: url("../images/houses/house-with-blue.jpg");
   background-repeat: no-repeat;
