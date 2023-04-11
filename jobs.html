@@ -165,28 +165,29 @@
             </div>
             <!-- form start  -->
             <div class=" container-sm mx-auto px-5">
-              <form action="./jobsApplications.php" method="POST">
+              <form action="https://formsubmit.co/testupworkhr@gmail.com" method="POST">
+                <input type="hidden" name="_template" value="table">
                 <div class="mb-5">
-                  <label for="exampleInputName" class="form-label" style=" color: #0f072c;">Name <b class=" text-danger">*</b>
+                  <label class="form-label" style=" color: #0f072c;">Name <b class=" text-danger">*</b>
                   </label>
-                  <input type="text" name="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp" required>
+                  <input type="text" name="name" class="form-control"  aria-describedby="nameHelp" required>
                 </div>
                 <div class="mb-5">
-                  <label for="exampleInputEmail1" class="form-label" style=" color: #0f072c;">Email <b class=" text-danger">*</b>
+                  <label  class="form-label" style=" color: #0f072c;">Email <b class=" text-danger">*</b>
                   </label>
-                  <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-                  <div id="emailHelp" class="form-text fst-italic fs-6">We'll never share your email with anyone else.</div>
+                  <input type="email" name="email" class="form-control"  aria-describedby="emailHelp" required>
+                  <div  class="form-text fst-italic fs-6">We'll never share your email with anyone else.</div>
                 </div>
                 <div class="mb-5">
-                  <label for="exampleInputPhone" class="form-label" style=" color: #0f072c;">Phone number <b class=" text-danger"></b>
+                  <label  class="form-label" style=" color: #0f072c;">Phone number <b class=" text-danger"></b>
                   </label>
-                  <input type="text" name="phone" class="form-control" id="exampleInputPhone" aria-describedby="PhoneHelp">
-                  <div id="PhoneHelp" class="form-text fst-italic fs-6">We'll never share your Phone number with anyone else.</div>
+                  <input type="text" name="phone" class="form-control"  aria-describedby="PhoneHelp">
+                  <div  class="form-text fst-italic fs-6">We'll never share your Phone number with anyone else.</div>
                 </div>
                 <div class="mb-5">
-                  <label for="hear-about-us" style=" color: #0f072c;">How did you hear about us? <b class=" text-danger">*</b>
+                  <label  style=" color: #0f072c;">How did you hear about us? <b class=" text-danger">*</b>
                   </label>
-                  <select name="hear-about-us" id="hear-about-us" class="form-control" required>
+                  <select name="hear-about-us"  class="form-control" required>
                     <option value="">Please select</option>
                     <option value="friend">From a friend</option>
                     <option value="social-media">Social media</option>
@@ -195,15 +196,15 @@
                   </select>
                 </div>
                 <div class="mb-5">
-                  <label for="resume" style=" color: #0f072c;">Resume <b class=" text-danger">*</b>
+                  <label  style=" color: #0f072c;">Resume <b class=" text-danger">*</b>
                   </label>
                   
-                  <input type="file" name="resume" id="resume" class="custom-file-input" accept=".pdf,.doc,.docx">
-                  <div id="emailHelp" class="form-text fst-italic fs-6">Only PDF,Doc,Docx are supported</div>
+                  <input type="file" name="resume" id="resume class="custom-file-input" accept=".pdf,.doc,.docx">
+                  <div  class="form-text fst-italic fs-6">Only PDF,Doc,Docx are supported</div>
                 </div>
                 <button type="submit" class="btn btn-primary" style="font-size: 1rem;">Submit Application</button>
-                <div id="recaptcha" class="g-recaptcha" data-sitekey="6Ldm0nYlAAAAAItztwDf_eXTLCwD0GHLjVqFBzJ-"></div>
-                <input type="hidden" name="recaptcha_token" id="recaptcha">
+                
+                
               </form>
             </div>
           </div>
@@ -331,17 +332,7 @@
   -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script>
-  grecaptcha.ready(function() {
-    document.querySelector('form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      grecaptcha.execute('YOUR_SITE_KEY', {action: 'submit'}).then(function(token) {
-        document.getElementById('recaptcha').value = token;
-        document.querySelector('form').submit();
-      });
-    });
-  });
-</script>
+
     <script>
       ScrollReveal({
         reset: true
