@@ -3,32 +3,12 @@
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Verify reCAPTCHA response
-    $recaptcha_secret_key = "6Lf6sXolAAAAAL3WRoR63ryDn9wndsU-2U6oOd2c";
-    $recaptcha_response = $_POST["g-recaptcha-response"];
-    $recaptcha_url = "https://www.google.com/recaptcha/api/siteverify";
-    $recaptcha_data = array(
-        "secret" => $recaptcha_secret_key,
-        "response" => $recaptcha_response
-    );
-    $recaptcha_options = array(
-        "http" => array(
-            "method" => "POST",
-            "content" => http_build_query($recaptcha_data)
-        )
-    );
-    $recaptcha_context = stream_context_create($recaptcha_options);
-    $recaptcha_result = file_get_contents($recaptcha_url, false, $recaptcha_context);
-    $recaptcha_json = json_decode($recaptcha_result);
-    if (!$recaptcha_json->success) {
-        die("reCAPTCHA verification failed");
-    }
 
     // Define database connection parameters
     $servername = "localhost";
     $username = "freelandco";
     $password = "6stzZzMDJszuhE8";
-    $dbname = "freelandco_Users";
+    $dbname = "freelandco_users";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -38,27 +18,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Get input data from form
-    $email = $_POST["search"];
-    $category = $_POST["category"];
-    $address = $_POST["Address"];
+    // Retrieve form values
+$email = $_POST['search'];
+$contact_number = $_POST['category'];
+$address = $_POST['Address'];
+$submission_date = date("Y-m-d");
 
-    // Prepare SQL statement
-    $stmt = $conn->prepare("INSERT INTO house_owners (email, category, address) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $email, $category, $address);
+// Generate random ID
+$id = uniqid();
 
-    // Execute SQL statement
-    if ($stmt->execute() === TRUE) {
-        // Redirect to success page
-        header("Location: index.html");
-        exit;
-    } else {
-        echo "Error: " . $stmt->error;
-    }
+// Insert values into database
+$sql = "INSERT INTO users (id, email, contact_number, address, submission_date)
+VALUES ('$id', '$email', '$contact_number', '$address', '$submission_date')";
 
-    // Close database connection
-    $stmt->close();
-    $conn->close();
+if (mysqli_query($conn, $sql)) {
+    // Redirect to index.html after successful submission
+    header("Location: index.html");
+    exit();
+} else {
+    echo "Error inserting data: " . mysqli_error($conn);
+}
+
+// Close database connection
+mysqli_close($conn);
 }
 
 ?>
