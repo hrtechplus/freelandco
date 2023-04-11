@@ -15,7 +15,7 @@ if (!$conn) {
 
 // Retrieve form values
 $email = $_POST['search'];
-$contact_number = $_POST['category'];
+$contact_number = $_POST['phone'];
 $address = $_POST['Address'];
 $submission_date = date("Y-m-d");
 $recaptcha_response = $_POST['g-recaptcha-response'];
