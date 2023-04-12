@@ -51,7 +51,7 @@ VALUES ('$id', '$email', '$contact_number', '$address', '$submission_date')";
 
 if (mysqli_query($conn, $sql)) {
     // Redirect to index.html after successful submission
-    header("Location: index.html");
+    header("Location: successfull.html");
     exit();
 } else {
     echo "Error inserting data: " . mysqli_error($conn);
