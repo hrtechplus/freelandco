@@ -50,7 +50,7 @@ $sql = "INSERT INTO homeowners (id, email, contact_number, address, submission_d
 VALUES ('$id', '$email', '$contact_number', '$address', '$submission_date')";
 
 if (mysqli_query($conn, $sql)) {
-    // Redirect to index.html after successful submission
+    // Redirect to successfull.html after successful submission
     header("Location: successfull.html");
     exit();
 } else {
