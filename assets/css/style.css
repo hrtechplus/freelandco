@@ -1220,4 +1220,14 @@ body {
   .about .section-text {
     max-width: unset;
   }
+
+  .banner {
+    text-align: center;
+    margin-top: 0;
+    padding: 1em 0.5em;
+    background: #e72929;
+    color: #fff7f1;
+    font-weight: 600;
+    /*  color: #e17055 */
+  }
 }
